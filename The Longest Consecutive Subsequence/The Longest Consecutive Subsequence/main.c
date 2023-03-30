@@ -3,8 +3,9 @@
 
 void main()
 {
-    char input[MaxarraySize] = { '\0' };
+
     int32_t arr[MaxarraySize] = { 0 };
+    char input[MaxarraySize] = { '\0' };
     uint8_t x = 0;
     uint8_t n = 0;
     uint8_t cont = 'y';
@@ -17,7 +18,7 @@ void main()
         lcsGetSize(arr, n, &x);
         printf("\n----------------------------------------------------------------------------------------------------------\n");
         printf("\nPress Any Key to Exit or Y to continue \n");
-        getch(cont);
+        cont = getch();
         cont = tolower(cont);
     }
 

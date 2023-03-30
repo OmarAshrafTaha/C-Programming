@@ -1,7 +1,12 @@
 #include "MyLibrary.h"
 
+
 int8_t insertionSort(int32_t* array, uint8_t arraySize)
 {
+	if (arraySize == 0)
+	{
+		return -1;
+	}
 	for (int i = 1; i < arraySize ; i++)
 	{
 		int8_t temp = array[i];
@@ -39,6 +44,10 @@ void printArray(int32_t* array, uint8_t arraySize)
 
 int8_t lcsGetSize(int32_t* array, uint8_t arraySize, uint8_t* sizeofLCS)
 {		
+	if (arraySize == 0)
+	{
+		return -1;
+	}
 	if(insertionSort(array, arraySize)==-2)
 	{
 		return -2;
@@ -76,7 +85,6 @@ int8_t getExpression(char* inputArray, int32_t* array, uint8_t* n)
 {
 	*n = 0;
 	fgets(inputArray, MaxarraySize, stdin);
-	//printf("\n%d\n", strlen(inputArray));
 
 	if (inputArray[0]== '\n')
 	{
