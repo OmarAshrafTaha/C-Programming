@@ -10,13 +10,24 @@ int8_t isBalancedParanthethes(uint8_t* expression)
 {
 	ST_stack_t input_stack;
 	createEmptyStack(&input_stack);
+	uint8_t bracket_count = 0;
 	
 
 	for (int i = 0;i < strlen(expression);i++)
 	{
+		if (expression[i] == '{' || expression[i] == '(' || expression[i] == ')' || expression[i] == '}')
+		{
+			bracket_count;
+		}
+		else if ((bracket_count == 0) && (i == strlen(expression) - 1))
+		{
+			printf("\nNo Brackets Detected\n");
+			return -2;
+		}
 
 		if (expression[i] == '{' || expression[i] == '(')
 		{
+
 			push(&input_stack, expression[i]);
 
 		}
